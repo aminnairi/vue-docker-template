@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  node:
+    image: node:20.0.0-alpine
+    user: node
+    tty: true
+    stdin_open: true
+    working_dir: /home/node
+    entrypoint: sh -c
+    command: $DOCKER_COMPOSE_NODE_COMMAND
+    env_file: .env
+    ports:
+      - $DOCKER_COMPOSE_NODE_PORT:$DOCKER_COMPOSE_NODE_PORT
+    volumes:
+      - .:/home/node
