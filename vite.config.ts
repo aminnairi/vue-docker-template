@@ -7,5 +7,9 @@ export default defineConfig({
   server: {
     host: true,
     port: Number(process.env.DOCKER_COMPOSE_NODE_PORT) || 5173
+  },
+  preview: {
+    host: true,
+    port: Number(process.env.DOCKER_COMPOSE_NODE_PORT) || 5173
   }
 });
